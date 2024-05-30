@@ -1,13 +1,16 @@
 import React from 'react';
-import '../Game.css';
+import './Game.css';
 
-const onClick = (ev, id) => {
-    alert('on click' + id);
-}
-const GameCircle = ({id, children}) => {
+
+const GameCircle = ({id, children, onCircleClicked}) => {
+
+    const onClick = (ev, id) => {
+        debugger;
+        onCircleClicked(id);
+    }
     
     return (
-        <div className={`gameCircle ${id % 2 === 0 ? "odd" : "even"}`} onClick={(ev) => onClick(ev, id)}>
+        <div className={`gameCircle ${id % 2 === 0 ? "odd" : "even"}`} onClick={() => onClick(id)}>
             {children}
         </div>
     )

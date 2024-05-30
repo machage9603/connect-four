@@ -7,14 +7,14 @@
     position: absolute;
     left: 50%;
     margin-left: -250px;
-    top: 25%;
+    top: 20%;
 }
 
 .gameCircle {
     width: 100px;
-    height: 10px;
+    height: 100px;
     margin: 10px;
-    border-radius: '50%'; 
+    border-radius: 50%; 
 }
 
 .odd {
