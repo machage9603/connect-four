@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Game.css';
 import GameCircle from './GameCircle';
 
 const GameBoard = () => {
+    const [gameBoard, setGameBoard] = useState(Array(16).fill(0));
     const circleClicked = (id) => {
         debugger;
         console.log('circle clicked' + id);
+
+        gameBoard[id] = 1;
+        setGameBoard(gameBoard);
+
+        console.log(gameBoard);
     }
 
     return (
         <div className="gameBoard" >
-            <GameCircle id="1"  onCircleClicked={circleClicked}>
+            <GameCircle id="1"  className="player_1" onCircleClicked={circleClicked}>
              
             </GameCircle>
             <GameCircle id="2" >
