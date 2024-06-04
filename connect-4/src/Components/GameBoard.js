@@ -35,7 +35,7 @@ const GameBoard = () => {
         console.log('circle clicked' + id);
         
         if (gameBoard[id] !== NO_PLAYER) return;
-        
+        // TODO: check for winner
         if (gameState !== GAME_STATE_PLAYING) return;
 
         if (isWinner(gameBoard, id, currentPlayer)) {
