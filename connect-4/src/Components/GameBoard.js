@@ -3,7 +3,7 @@ import './Game.css';
 import Footer from './Footer';
 import Header from './Header';
 import GameCircle from './GameCircle';
-import {isWinner} from '../helper';
+import {isDraw, isWinner} from '../helper';
 
 import { 
     GAME_STATE_PLAYING, 
@@ -12,6 +12,7 @@ import {
     PLAYER_1, 
     PLAYER_2,
     NO_CIRCLES,
+    GAME_STATE_DRAW,
 } from '../constants.js';
 
 const GameBoard = () => {
@@ -35,11 +36,16 @@ const GameBoard = () => {
         console.log('circle clicked' + id);
         
         if (gameBoard[id] !== NO_PLAYER) return;
-        // TODO: check for winner
+    
         if (gameState !== GAME_STATE_PLAYING) return;
 
         if (isWinner(gameBoard, id, currentPlayer)) {
             setGameState(GAME_STATE_WIN);
+            setWinPlayer(NO_PLAYER);
+        }
+
+        if (isDraw(gameBoard, id, currentPlayer)) {
+            setGameState(GAME_STATE_DRAW);
             setWinPlayer(currentPlayer);
         }
         setGameBoard(prev =>{
