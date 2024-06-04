@@ -3,6 +3,7 @@ import './Game.css';
 import Footer from './Footer';
 import Header from './Header';
 import GameCircle from './GameCircle';
+import {isWinner} from '../helper';
 
 const NO_CIRCLES = 16;
 const NO_PLAYER = 0;
@@ -26,6 +27,9 @@ const GameBoard = () => {
     const circleClicked = (id) => {
         console.log('circle clicked' + id);
 
+        if (isWinner(gameBoard, id, currentPlayer)) {
+            console.log('winner');
+        }
         setGameBoard(prev =>{
             return prev.map((circle, pos) => {
                 if (pos === id) return currentPlayer;
@@ -44,7 +48,7 @@ const GameBoard = () => {
     }
     return (
         <>
-            <Header />
+            <Header player={currentPlayer} />
         <div className="gameBoard" >
             {initialBoard()}        
         </div>
