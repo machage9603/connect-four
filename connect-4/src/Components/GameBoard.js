@@ -5,11 +5,11 @@ import Header from './Header';
 import GameCircle from './GameCircle';
 import {isDraw, isWinner} from '../helper';
 
-import { 
-    GAME_STATE_PLAYING, 
+import {
+    GAME_STATE_PLAYING,
     GAME_STATE_WIN,
-    NO_PLAYER, 
-    PLAYER_1, 
+    NO_PLAYER,
+    PLAYER_1,
     PLAYER_2,
     NO_CIRCLES,
     GAME_STATE_DRAW,
@@ -31,17 +31,17 @@ const GameBoard = () => {
         }
         return circles;
     }
-    
+
     const circleClicked = (id) => {
         console.log('circle clicked' + id);
-        
+
         if (gameBoard[id] !== NO_PLAYER) return;
-    
+
         if (gameState !== GAME_STATE_PLAYING) return;
 
         if (isWinner(gameBoard, id, currentPlayer)) {
             setGameState(GAME_STATE_WIN);
-            setWinPlayer(NO_PLAYER);
+            setWinPlayer(currentPlayer);
         }
 
         if (isDraw(gameBoard, id, currentPlayer)) {
@@ -68,7 +68,7 @@ const GameBoard = () => {
         <>
             <Header gameState={gameState} currentPlayer={currentPlayer} winPlayer={winPlayer}/>
         <div className="gameBoard" >
-            {initialBoard()}        
+            {initialBoard()}
         </div>
         <Footer />
         </>
