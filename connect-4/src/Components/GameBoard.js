@@ -41,7 +41,9 @@ const GameBoard = () => {
 
         if (isWinner(gameBoard, id, currentPlayer)) {
             setGameState(GAME_STATE_WIN);
-            setWinPlayer(currentPlayer);
+            setWinPlayer(currentPlayer
+
+            );
         }
 
         if (isDraw(gameBoard, id, currentPlayer)) {
