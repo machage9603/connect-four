@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-const Footer = ({onClickEvent}) => {
+import {
+  GAME_STATE_PLAYING,
+ } from '../constants.js';
+
+const Footer = ({onClickEvent, gameState}) => {
   return (
     <div className="panel footer">
-       <button onClick={onClickEvent}>New Game</button>
+      {
+        gameState !== GAME_STATE_PLAYING && <button onClick={onClickEvent}>New Game</button>
+      }
     </div>
   );
 };
