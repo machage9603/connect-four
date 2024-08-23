@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Visit https://react-project-pl2vmkkpp-machages-projects.vercel.app/ to play.
+
 ## Available Scripts
 
 In the project directory, you can run:
