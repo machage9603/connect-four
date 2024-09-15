@@ -1,25 +1,8 @@
-Here's a technical README.md for your Connect 4 project:
-
----
-
 # Connect 4 Game
 
 ![Connect 4](https://img.shields.io/badge/React-v18.2.0-blue) ![Vercel](https://img.shields.io/badge/Deployment-Vercel-brightgreen)
 
 Welcome to the **Connect 4** game, a classic two-player strategy game built with React. This project was bootstrapped with [Create React App](https://create-react-app.dev/) and is deployed on [Vercel](https://react-project-pl2vmkkpp-machages-projects.vercel.app/).
-
-## Table of Contents
-
-- [Features](#features)
-- [Live Demo](#live-demo)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Technologies](#technologies)
-- [Architecture](#architecture)
-- [Game Logic](#game-logic)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -93,16 +76,6 @@ The game logic is encapsulated in a custom React hook, `useConnect4`, which incl
 - **Move Validation**: Ensures that discs are only placed in valid positions.
 - **Win Detection**: Checks for four consecutive discs horizontally, vertically, or diagonally.
 - **Draw Detection**: Determines if the board is full without any winner.
-
-## Deployment
-
-This project is deployed on [Vercel](https://vercel.com/), which handles continuous integration and deployment.
-
-### Deployment Steps:
-
-1. Commit your changes to GitHub.
-2. Link your repository to Vercel.
-3. Push your changes, and Vercel will automatically build and deploy your application.
 
 ## Contributing
 
