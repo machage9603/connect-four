@@ -3,7 +3,7 @@ import './Game.css';
 import Footer from './Footer';
 import Header from './Header';
 import GameCircle from './GameCircle';
-import {isDraw, isWinner} from '../helper';
+import { isDraw, isWinner } from '../helper';
 
 import {
     GAME_STATE_PLAYING,
@@ -61,7 +61,7 @@ const GameBoard = () => {
             setGameState(GAME_STATE_DRAW);
             setWinPlayer(currentPlayer);
         }
-        setGameBoard(prev =>{
+        setGameBoard(prev => {
             return prev.map((circle, pos) => {
                 if (pos === id) return currentPlayer;
                 return circle;
@@ -75,13 +75,13 @@ const GameBoard = () => {
     }
 
     const renderCircle = id => {
-        return <GameCircle key={id} id={id} className={`player_${gameBoard[id]}`	} onCircleClicked={circleClicked}/>
+        return <GameCircle key={id} id={id} className={`player_${gameBoard[id]}`} onCircleClicked={circleClicked} />
     }
     return (
         <>
-            <Header gameState={gameState} currentPlayer={currentPlayer} winPlayer={winPlayer}/>
-        <div className="gameBoard" >{initialBoard()}</div>
-        <Footer onClickEvent={initGame} gameState={gameState}/>
+            <Header gameState={gameState} currentPlayer={currentPlayer} winPlayer={winPlayer} />
+            <div className="gameBoard" >{initialBoard()}</div>
+            <Footer onClickEvent={initGame} gameState={gameState} />
         </>
     )
 }
